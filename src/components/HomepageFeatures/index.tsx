@@ -1,71 +1,91 @@
-import type {ReactNode} from 'react';
-import clsx from 'clsx';
-import Heading from '@theme/Heading';
-import styles from './styles.module.css';
+import type { ReactNode } from "react";
+import clsx from "clsx";
+import Heading from "@theme/Heading";
+import styles from "./styles.module.css";
 
 type FeatureItem = {
   title: string;
-  Svg: React.ComponentType<React.ComponentProps<'svg'>>;
+  pictureUrl: string;
+  logoUrl: ReactNode;
   description: ReactNode;
 };
 
 const FeatureList: FeatureItem[] = [
   {
-    title: 'Easy to Use',
-    Svg: require('@site/static/img/undraw_docusaurus_mountain.svg').default,
-    description: (
-      <>
-        Docusaurus was designed from the ground up to be easily installed and
-        used to get your website up and running quickly.
-      </>
+    title: "Johan Rouve",
+    pictureUrl: "https://iili.io/5LEXeV.jpg",
+    logoUrl: (
+      <img
+        src="img/trustcollect.svg"
+        alt="TrustCollect logo"
+        className={styles.logo_trustcollect}
+      />
     ),
+    description: <>CTO chez TrustCollect</>,
   },
   {
-    title: 'Focus on What Matters',
-    Svg: require('@site/static/img/undraw_docusaurus_tree.svg').default,
-    description: (
-      <>
-        Docusaurus lets you focus on your docs, and we&apos;ll do the chores. Go
-        ahead and move your docs into the <code>docs</code> directory.
-      </>
+    title: "Marjorie Aubert",
+    pictureUrl: "https://iili.io/3FFyGpa.md.jpg",
+    logoUrl: (
+      <img
+        src="https://cdn.prod.website-files.com/642eed47b21be33868253a0c/642eee3534abb5bc1e1552ba_logo_yellow.svg"
+        alt="Comet logo"
+        className={styles.logo_comet}
+      />
     ),
+    description: <>Développeuse full-stack chez Comet Meetings</>,
   },
   {
-    title: 'Powered by React',
-    Svg: require('@site/static/img/undraw_docusaurus_react.svg').default,
-    description: (
-      <>
-        Extend or customize your website layout by reusing React. Docusaurus can
-        be extended while reusing the same header and footer.
-      </>
+    title: "Bastien Tran",
+    pictureUrl: "https://iili.io/3FKFlou.jpg",
+    logoUrl: (
+      <img
+        src="https://cdn.prod.website-files.com/642eed47b21be33868253a0c/642eee3534abb5bc1e1552ba_logo_yellow.svg"
+        alt="Comet logo"
+        className={styles.logo_comet}
+      />
     ),
+    description: <>Développeur full-stack chez Comet Meetings</>,
   },
 ];
 
-function Feature({title, Svg, description}: FeatureItem) {
+function Feature({ title, pictureUrl, description, logoUrl }: FeatureItem) {
   return (
-    <div className={clsx('col col--4')}>
-      <div className="text--center">
-        <Svg className={styles.featureSvg} role="img" />
+    <div className={clsx("col avatar avatar--vertical")}>
+      <img
+        src={pictureUrl}
+        className={clsx(
+          "avatar__photo avatar__photo--xl",
+          styles.avatar__photo,
+        )}
+      />
+      <div
+        className={clsx(
+          "text--center margin-top--md padding-horiz--md avatar__intro",
+          styles.avatar__intro,
+        )}
+      >
+        <div className="avatar__name">{title}</div>
+        <p className="avatar__subtitle">{description}</p>
       </div>
-      <div className="text--center padding-horiz--md">
-        <Heading as="h3">{title}</Heading>
-        <p>{description}</p>
-      </div>
+      {logoUrl}
     </div>
   );
 }
 
 export default function HomepageFeatures(): ReactNode {
   return (
-    <section className={styles.features}>
-      <div className="container">
-        <div className="row">
-          {FeatureList.map((props, idx) => (
-            <Feature key={idx} {...props} />
-          ))}
+    <>
+      <section className={styles.features}>
+        <div className="container">
+          <h3 className="text--center">Animé par</h3>
+          <div className={clsx("row", styles.features_row_container)}>
+            {FeatureList.map((props, idx) => (
+              <Feature key={idx} {...props} />
+            ))}
+          </div>
         </div>
-      </div>
-    </section>
+      </section>
+    </>
   );
 }
