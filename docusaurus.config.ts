@@ -7,7 +7,7 @@ import type * as Preset from "@docusaurus/preset-classic";
 const config: Config = {
   title: "Effect <A, E, R>",
   tagline: "The best way to build robust apps in TypeScript",
-  favicon: "img/effect.png",
+  favicon: "/img/effect.png",
 
   // Future flags, see https://docusaurus.io/docs/api/docusaurus-config#future
   future: {
@@ -56,7 +56,7 @@ const config: Config = {
 
   themeConfig: {
     // Replace with your project's social card
-    image: "img/effect.png",
+    image: "/img/effect.png",
     colorMode: {
       defaultMode: "dark",
       respectPrefersColorScheme: false,
@@ -66,7 +66,7 @@ const config: Config = {
       title: "Effect",
       logo: {
         alt: "Home",
-        src: "/static/img/effect.png",
+        src: "/img/effect.png",
       },
       items: [
         {
