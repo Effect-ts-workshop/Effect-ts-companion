@@ -25,9 +25,11 @@
   --ifm-footer-link-color: #a1a1aa;
   --ifm-footer-link-hover-color: #fafafa;
 
+  --ifm-toc-border-color: #e4e4e7;
+
   --ifm-code-font-size: 95%;
-  --ifm-font-family-monospace: "JetBrains Mono", "Fira Code", "Cascadia Code",
-    ui-monospace, monospace;
+  --ifm-font-family-monospace:
+    "JetBrains Mono", "Fira Code", "Cascadia Code", ui-monospace, monospace;
 
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.08);
 }
@@ -78,32 +80,32 @@
   height: 24px;
 }
 
-/* ─── Hero banner ────────────────────────────────────────────── */
+/* ─── Hero banner — toujours sombre ──────────────────────────── */
+/* Le hero reste noir dans les deux modes, on force le texte blanc */
 .hero--primary {
   background-color: #09090b;
-  color: #fafafa;
 }
 
-.hero__title {
+.hero--primary .hero__title {
   font-size: 3.5rem;
   font-weight: 800;
   letter-spacing: -0.04em;
   color: #fafafa;
 }
 
-.hero__subtitle {
+.hero--primary .hero__subtitle {
   color: #a1a1aa;
   font-size: 1.2rem;
 }
 
-/* ─── Buttons ────────────────────────────────────────────────── */
-.button--secondary {
+/* ─── Bouton CTA (scoped au hero) ────────────────────────────── */
+.hero--primary .button--secondary {
   border-color: #fafafa;
   color: #fafafa;
   background: transparent;
 }
 
-.button--secondary:hover {
+.hero--primary .button--secondary:hover {
   background-color: #fafafa;
   color: #09090b;
   border-color: #fafafa;

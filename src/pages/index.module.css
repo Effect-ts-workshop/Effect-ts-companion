@@ -8,8 +8,8 @@
   text-align: center;
   position: relative;
   overflow: hidden;
-  background-color: #09090b;
-  border-bottom: 1px solid #27272a;
+  background-color: var(--ifm-background-color);
+  border-bottom: 1px solid var(--ifm-toc-border-color);
 }
 
 @media screen and (max-width: 996px) {

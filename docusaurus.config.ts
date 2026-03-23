@@ -66,7 +66,7 @@ const config: Config = {
       title: "Effect",
       logo: {
         alt: "Home",
-        src: "img/effect.png",
+        src: "/static/img/effect.png",
       },
       items: [
         {

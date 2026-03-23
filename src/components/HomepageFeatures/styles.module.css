@@ -3,8 +3,8 @@
   align-items: center;
   padding: 4rem 0;
   width: 100%;
-  background-color: #09090b;
-  border-top: 1px solid #27272a;
+  background-color: var(--ifm-background-color);
+  border-top: 1px solid var(--ifm-toc-border-color);
 }
 
 .features_row_container {
@@ -19,20 +19,30 @@
 
 .avatar__photo {
   object-fit: cover;
-  border: 2px solid #27272a;
+  border: 2px solid var(--ifm-toc-border-color);
   filter: grayscale(20%);
 }
 
+/* Light mode : logos en noir */
 .logo_comet {
   height: 50px;
   margin-top: 12px;
-  filter: brightness(0) invert(1);
+  filter: brightness(0);
   opacity: 0.5;
 }
 
 .logo_trustcollect {
   height: 64px;
   margin-top: 8px;
-  filter: brightness(0) invert(1);
+  filter: brightness(0);
   opacity: 0.5;
+}
+
+/* Dark mode : logos en blanc */
+:global([data-theme="dark"]) .logo_comet {
+  filter: brightness(0) invert(1);
+}
+
+:global([data-theme="dark"]) .logo_trustcollect {
+  filter: brightness(0) invert(1);
 }
