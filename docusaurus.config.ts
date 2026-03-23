@@ -58,9 +58,11 @@ const config: Config = {
     // Replace with your project's social card
     image: "img/effect.png",
     colorMode: {
-      respectPrefersColorScheme: true,
+      defaultMode: "dark",
+      respectPrefersColorScheme: false,
     },
     navbar: {
+      style: "dark",
       title: "Effect",
       logo: {
         alt: "Home",
@@ -116,8 +118,8 @@ const config: Config = {
       copyright: `Copyright © ${new Date().getFullYear()} - Effect Devoxx workshop`,
     },
     prism: {
-      theme: prismThemes.github,
-      darkTheme: prismThemes.dracula,
+      theme: prismThemes.oneDark,
+      darkTheme: prismThemes.oneDark,
     },
   } satisfies Preset.ThemeConfig,
 };
