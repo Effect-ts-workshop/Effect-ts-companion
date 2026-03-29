@@ -28,21 +28,16 @@
   height: 50px;
   margin-top: 12px;
   filter: brightness(0);
-  opacity: 0.5;
 }
 
 .logo_trustcollect {
   height: 64px;
   margin-top: 8px;
   filter: brightness(0);
-  opacity: 0.5;
 }
 
 /* Dark mode : logos en blanc */
-:global([data-theme="dark"]) .logo_comet {
-  filter: brightness(0) invert(1);
-}
-
+:global([data-theme="dark"]) .logo_comet,
 :global([data-theme="dark"]) .logo_trustcollect {
   filter: brightness(0) invert(1);
 }
